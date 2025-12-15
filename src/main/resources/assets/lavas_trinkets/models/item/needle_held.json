@@ -1,0 +1,6 @@
+{
+  "parent": "lavas_trinkets:item/large_weapon_template",
+  "textures": {
+    "layer0": "lavas_trinkets:item/needle"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "overrides": [
+    {
+      "predicate": {
+        "lavas_trinkets:thrown": 0.0
+      },
+      "model": "lavas_trinkets:item/harpoon_rope"
+    },
+    {
+      "predicate": {
+        "lavas_trinkets:thrown": 1.0
+      },
+      "model": "lavas_trinkets:item/harpoon_weapon"
+    }
+  ]
+}
