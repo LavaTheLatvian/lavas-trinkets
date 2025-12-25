@@ -29,9 +29,6 @@ public class NeedleItem extends SwordItem {
                         (player.getLookAngle().y + player.getDeltaMovement().y()) / 2,
                         (player.getLookAngle().z + player.getDeltaMovement().z()) * (1)
                 ));
-//            player.resetFallDistance();
-//            player.getPersistentData().putBoolean("CancelFallDamage", true);
-//            player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 60, 0));
                 player.hurtMarked = true;
                 player.getCooldowns().addCooldown(this, 100);
             }

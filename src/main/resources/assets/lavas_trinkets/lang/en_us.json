@@ -11,5 +11,8 @@
   "examplemod.configuration.magicNumberIntroduction": "Magic Number Text",
   "examplemod.configuration.magicNumber": "Magic Number",
 
-  "item.lavas_trinkets.needle":  "Needle"
+  "item.lavas_trinkets.needle":  "Needle",
+  "item.lavas_trinkets.harpoon": "Harpoon",
+
+  "entity.lavas_trinkets.harpoon": "Harpoon"
 }
