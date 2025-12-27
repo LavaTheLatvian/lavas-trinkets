@@ -27,8 +27,8 @@ public class LavasTrinketsClient {
 
 
     @SubscribeEvent
-    public static void init(FMLClientSetupEvent evt) {
-        evt.enqueueWork(() -> {
+    public static void init(FMLClientSetupEvent event) {
+        event.enqueueWork(() -> {
             ItemProperties.register(ModItems.HARPOON_ITEM.get(), LavasTrinketsMod.prefix("thrown"), (stack, level, entity, seed) -> {
                 return stack.get(ModDataComponents.HARPOON_THROWN) ? 0.0F : 1.0F;
             });

@@ -8,7 +8,7 @@ import net.minecraft.world.level.block.Block;
 
 import java.util.function.Supplier;
 
-public enum RareWeaponTier implements Tier {
+public enum ModTiers implements Tier {
     MYTHIC(2500, 8.0F, 3.0F, 20, () -> Ingredient.of(Items.IRON_INGOT));
 
     private final int uses;
@@ -17,7 +17,7 @@ public enum RareWeaponTier implements Tier {
     private final int enchantmentValue;
     private final Supplier<Ingredient> repairIngredient;
 
-    RareWeaponTier(int uses, float speed, float attackDamageBonus, int enchantmentValue,
+    ModTiers(int uses, float speed, float attackDamageBonus, int enchantmentValue,
                Supplier<Ingredient> repairIngredient) {
         this.uses = uses;
         this.speed = speed;

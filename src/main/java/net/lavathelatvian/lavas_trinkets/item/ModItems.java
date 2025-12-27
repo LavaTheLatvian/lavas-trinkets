@@ -12,7 +12,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
-import static net.lavathelatvian.lavas_trinkets.item.tiers.RareWeaponTier.MYTHIC;
+import static net.lavathelatvian.lavas_trinkets.item.tiers.ModTiers.MYTHIC;
 
 public class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(LavasTrinketsMod.MODID);
@@ -34,9 +34,9 @@ public class ModItems {
                     .rarity(Rarity.EPIC)
                     .stacksTo(1)
                     .component(ModDataComponents.HARPOON_THROWN.get(), false)
-                    .attributes(
-                            HarpoonItem.createAttributes()
-                    )
+//                    .attributes(
+//                            HarpoonItem.createAttributes()
+//                    )
 
 
     ));
