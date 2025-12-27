@@ -24,12 +24,11 @@ public class ModDataComponents {
 public static final DeferredRegister<DataComponentType<?>> DATA_COMPONENT_TYPES =
         DeferredRegister.createDataComponents(Registries.DATA_COMPONENT_TYPE, LavasTrinketsMod.MODID);
 
-
-//public static final DeferredHolder<DataComponentType<?>, DataComponentType<BlockPos>> HARPOON_STATE = register("harpoon_state",
-//        builder -> builder.persistent(BlockPos.CODEC));
-
 public static final DeferredHolder<DataComponentType<?>, DataComponentType<Boolean>> HARPOON_THROWN = register("harpoon_thrown",
                     builder -> builder.persistent(Codec.BOOL));
+
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<Boolean>> THROWING = register("throwing",
+            builder -> builder.persistent(Codec.BOOL));
 
     public static final DeferredHolder<DataComponentType<?>, DataComponentType<UUID>> HARPOON_SAVED = register("harpoon_saved",
             builder -> builder.persistent(UUIDUtil.CODEC));

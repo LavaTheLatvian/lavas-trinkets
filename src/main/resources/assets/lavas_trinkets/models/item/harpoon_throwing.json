@@ -1,0 +1,27 @@
+{
+  "parent": "minecraft:item/handheld",
+  "loader": "neoforge:separate_transforms",
+  "base": {
+    "parent": "lavas_trinkets:item/spear_weapon_template",
+    "textures": {
+      "layer0": "lavas_trinkets:item/harpoon"
+    },
+    "display": {
+      "thirdperson_righthand": {
+        "rotation": [180, -90, 45],
+        "translation": [0, -2, 2],
+        "scale": [1.7, 1.7, 0.85]
+      },
+      "thirdperson_lefthand": {
+        "rotation": [180, 90, -45],
+        "translation": [0, -2, 2],
+        "scale": [1.7, 1.7, 0.85]
+      }
+    }
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "lavas_trinkets:item/harpoon_gui"
+    }
+  }
+}

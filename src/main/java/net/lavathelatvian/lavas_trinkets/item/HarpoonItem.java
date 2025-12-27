@@ -37,9 +37,6 @@ public class HarpoonItem extends Item {
     public HarpoonItem(Properties properties) {
         super(properties);
     }
-    public static ItemAttributeModifiers createAttributes() {
-        return ItemAttributeModifiers.builder().add(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_ID, 8.0F, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND).add(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_ID, -2.9F, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND).build();
-    }
 
     public boolean canAttackBlock(BlockState state, Level level, BlockPos pos, Player player) {
         return !player.isCreative();
@@ -53,6 +50,7 @@ public class HarpoonItem extends Item {
             HarpoonProjectile harpoon2 = (HarpoonProjectile) harpoon;
             harpoon2.stopPulling(harpoon);
         }
+        else stack.set(ModDataComponents.THROWING, false);
     }
 
     public void releaseUsing(ItemStack stack, Level level, LivingEntity entityLiving, int timeLeft) {
@@ -78,6 +76,7 @@ public class HarpoonItem extends Item {
 
                                 player.getItemInHand(entityLiving.getUsedItemHand()).set(ModDataComponents.HARPOON_SAVED, harpoon.getUUID());
                                 player.getItemInHand(entityLiving.getUsedItemHand()).set(ModDataComponents.HARPOON_THROWN, true);
+                                stack.set(ModDataComponents.THROWING, false);
 
                                 if (player.hasInfiniteMaterials()) {
                                     harpoon.pickup = AbstractArrow.Pickup.CREATIVE_ONLY;
@@ -138,8 +137,8 @@ public class HarpoonItem extends Item {
             if (EnchantmentHelper.getTridentSpinAttackStrength(itemstack, player) > 0.0F && !player.isInWaterOrRain()) {
                 return InteractionResultHolder.fail(itemstack);
             } else {
-
                 player.startUsingItem(hand);
+                itemstack.set(ModDataComponents.THROWING, true);
                 return InteractionResultHolder.success(itemstack);
             }
         }
@@ -214,6 +213,5 @@ public class HarpoonItem extends Item {
     public void postHurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         stack.hurtAndBreak(1, attacker, EquipmentSlot.MAINHAND);
     }
-
 
 }

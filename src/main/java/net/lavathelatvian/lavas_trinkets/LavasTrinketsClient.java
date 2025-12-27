@@ -32,6 +32,9 @@ public class LavasTrinketsClient {
             ItemProperties.register(ModItems.HARPOON_ITEM.get(), LavasTrinketsMod.prefix("thrown"), (stack, level, entity, seed) -> {
                 return stack.get(ModDataComponents.HARPOON_THROWN) ? 0.0F : 1.0F;
             });
+            ItemProperties.register(ModItems.HARPOON_ITEM.get(), LavasTrinketsMod.prefix("throwing"), (stack, level, entity, seed) -> {
+                return stack.get(ModDataComponents.THROWING) ? 0.0F : 1.0F;
+            });
         });
     }
 

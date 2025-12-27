@@ -8,7 +8,15 @@
     },
     {
       "predicate": {
-        "lavas_trinkets:thrown": 1.0
+        "lavas_trinkets:thrown": 1.0,
+        "lavas_trinkets:throwing": 0.0
+      },
+      "model": "lavas_trinkets:item/harpoon_throwing"
+    },
+    {
+      "predicate": {
+        "lavas_trinkets:thrown": 1.0,
+        "lavas_trinkets:throwing": 1.0
       },
       "model": "lavas_trinkets:item/harpoon_weapon"
     }

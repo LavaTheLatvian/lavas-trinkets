@@ -34,11 +34,7 @@ public class ModItems {
                     .rarity(Rarity.EPIC)
                     .stacksTo(1)
                     .component(ModDataComponents.HARPOON_THROWN.get(), false)
-//                    .attributes(
-//                            HarpoonItem.createAttributes()
-//                    )
-
-
+                    .component(ModDataComponents.THROWING.get(), false)
     ));
 
     public static void register(IEventBus eventBus) {
