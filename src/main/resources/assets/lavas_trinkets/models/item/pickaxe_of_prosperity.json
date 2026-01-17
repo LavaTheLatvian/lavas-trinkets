@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "lavas_trinkets:item/pickaxe_of_prosperity"
+  }
+}

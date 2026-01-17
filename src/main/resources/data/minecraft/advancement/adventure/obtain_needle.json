@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "id": "lavas_trinkets:needle",
+      "count": 1
+    },
+    "title": {
+      "translate": "lavas_trinkets.advancements.obtain_needle.title"
+    },
+    "description": {
+      "translate": "lavas_trinkets.advancements.obtain_needle.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "minecraft:adventure/root",
+  "criteria": {
+    "needle": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "lavas_trinkets:needle"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "needle"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

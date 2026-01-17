@@ -1,0 +1,15 @@
+{
+  "structures": [
+    {
+      "structure": "lavas_trinkets:driftwood",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 6,
+    "separation": 3,
+    "salt": 69420,
+    "frequency": 0.4
+  }
+}

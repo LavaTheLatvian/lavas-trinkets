@@ -2,14 +2,21 @@ package net.lavathelatvian.lavas_trinkets;
 
 import com.google.common.eventbus.Subscribe;
 import net.lavathelatvian.lavas_trinkets.component.ModDataComponents;
+import net.lavathelatvian.lavas_trinkets.effect.ModEffects;
 import net.lavathelatvian.lavas_trinkets.entity.ModEntities;
 import net.lavathelatvian.lavas_trinkets.entity.client.HarpoonProjectileRenderer;
+import net.lavathelatvian.lavas_trinkets.item.ModCreativeTabs;
 import net.lavathelatvian.lavas_trinkets.item.ModItems;
+import net.lavathelatvian.lavas_trinkets.sound.ModSounds;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.*;
+import net.minecraft.world.item.trading.ItemCost;
+import net.minecraft.world.item.trading.MerchantOffer;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.event.village.WandererTradesEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -18,10 +25,6 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -60,6 +63,9 @@ public class LavasTrinketsMod {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
+        ModCreativeTabs.register(modEventBus);
+        ModEffects.register(modEventBus);
+        ModSounds.register(modEventBus);
         ModItems.register(modEventBus);
         ModEntities.register(modEventBus);
         ModDataComponents.register(modEventBus);
@@ -72,6 +78,7 @@ public class LavasTrinketsMod {
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
+
     }
 
     // Add the example block item to the building blocks tab

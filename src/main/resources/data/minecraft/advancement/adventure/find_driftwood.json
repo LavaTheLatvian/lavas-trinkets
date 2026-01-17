@@ -1,0 +1,39 @@
+{
+  "parent": "minecraft:adventure/root",
+  "criteria": {
+    "driftwood": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": "lavas_trinkets:driftwood"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "lavas_trinkets.advancements.find_driftwood.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:barrel"
+    },
+    "title": {
+      "translate": "lavas_trinkets.advancements.find_driftwood.title"
+    }
+  },
+  "requirements": [
+    [
+      "driftwood"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

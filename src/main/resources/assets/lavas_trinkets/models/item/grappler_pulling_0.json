@@ -1,0 +1,6 @@
+{
+    "parent": "lavas_trinkets:item/grappler",
+    "textures": {
+        "layer0": "lavas_trinkets:item/grappler_pulling_0"
+    }
+}

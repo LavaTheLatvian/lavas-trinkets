@@ -1,0 +1,50 @@
+{
+  "sickle_charge": {
+    "subtitle": "sounds.lavas_trinkets.sickle_charge",
+    "sounds": [
+      "lavas_trinkets:sickle_charge"
+    ]
+  },
+  "sickle_shatter": {
+    "subtitle": "sounds.lavas_trinkets.sickle_shatter",
+    "sounds": [
+      "lavas_trinkets:sickle_shatter"
+    ]
+  },
+  "wraith_charge": {
+    "subtitle": "sounds.lavas_trinkets.wraith_charge",
+    "sounds": [
+      "lavas_trinkets:wraith_charge"
+    ]
+  },
+  "wraith_hit": {
+    "subtitle": "sounds.lavas_trinkets.wraith_hit",
+    "sounds": [
+      "lavas_trinkets:wraith_hit"
+    ]
+  },
+  "hornet_shaw": {
+    "subtitle": "sounds.lavas_trinkets.hornet_shaw",
+    "sounds": [
+      "lavas_trinkets:shaw"
+    ]
+  },
+  "needle_shing": {
+    "subtitle": "sounds.lavas_trinkets.needle_shing",
+    "sounds": [
+      "lavas_trinkets:shing"
+    ]
+  },
+  "slice": {
+    "subtitle": "sounds.lavas_trinkets.slice",
+    "sounds": [
+      "lavas_trinkets:slice"
+    ]
+  },
+  "harpoon_stab": {
+    "subtitle": "sounds.lavas_trinkets.harpoon_stab",
+    "sounds": [
+      "lavas_trinkets:harpoon_stab"
+    ]
+  }
+}

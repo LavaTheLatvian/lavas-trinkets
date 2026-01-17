@@ -1,10 +1,9 @@
-package net.lavathelatvian.lavas_trinkets.item;
+package net.lavathelatvian.lavas_trinkets.item.custom;
 
 import net.lavathelatvian.lavas_trinkets.component.ModDataComponents;
 import net.lavathelatvian.lavas_trinkets.entity.custom.HarpoonProjectile;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -13,7 +12,6 @@ import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -27,8 +25,6 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
-import net.neoforged.neoforge.common.CommonHooks;
-import net.neoforged.neoforge.common.extensions.IItemStackExtension;
 
 import java.util.Objects;
 
@@ -73,6 +69,7 @@ public class HarpoonItem extends Item {
                             if (f == 0.0F) {
                                 HarpoonProjectile harpoon = new HarpoonProjectile(player, level);
                                 harpoon.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 2.5F, 1.0F);
+                                harpoon.setPickupItemStackOrigin(stack);
 
                                 player.getItemInHand(entityLiving.getUsedItemHand()).set(ModDataComponents.HARPOON_SAVED, harpoon.getUUID());
                                 player.getItemInHand(entityLiving.getUsedItemHand()).set(ModDataComponents.HARPOON_THROWN, true);
@@ -84,7 +81,7 @@ public class HarpoonItem extends Item {
 
                                 level.addFreshEntity(harpoon);
 
-                                level.playSound((Player) null, harpoon, (SoundEvent) holder.value(), SoundSource.PLAYERS, 1.0F, 1.0F);
+                                level.playSound((Player) null, harpoon, (SoundEvent) holder.value(), SoundSource.PLAYERS, 1.0F, 0.6F);
                             }
                         }
 
@@ -187,6 +184,8 @@ public class HarpoonItem extends Item {
                     stack.set(ModDataComponents.HARPOON_SAVED, null);
                     // allow to throw again
                     stack.set(ModDataComponents.HARPOON_THROWN, false);
+                    // Sound effect
+                    level.playSound((Player) null, entity, SoundEvents.TRIDENT_RETURN, SoundSource.PLAYERS, 0.8F, 0.6F);
                     // cooldown
                     if (entity instanceof Player player) player.getCooldowns().addCooldown(this, 30);
 
@@ -206,12 +205,5 @@ public class HarpoonItem extends Item {
         else return UseAnim.SPEAR;
     }
 
-    public boolean hurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        return true;
-    }
-
-    public void postHurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        stack.hurtAndBreak(1, attacker, EquipmentSlot.MAINHAND);
-    }
 
 }

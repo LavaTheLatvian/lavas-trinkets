@@ -32,6 +32,10 @@ public static final DeferredHolder<DataComponentType<?>, DataComponentType<Boole
 
     public static final DeferredHolder<DataComponentType<?>, DataComponentType<UUID>> HARPOON_SAVED = register("harpoon_saved",
             builder -> builder.persistent(UUIDUtil.CODEC));
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<Integer>> WRAITH_CHARGES = register("wraith_charges",
+            builder -> builder.persistent(Codec.INT));
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<UUID>> GRAPPLER_ARROW = register("grappler_arrow",
+            builder -> builder.persistent(UUIDUtil.CODEC));
 
 
 

@@ -13,6 +13,35 @@
 
   "item.lavas_trinkets.needle":  "Needle",
   "item.lavas_trinkets.harpoon": "Harpoon",
+  "item.lavas_trinkets.wraith": "Wraith",
+  "item.lavas_trinkets.crystal_of_redemption": "Crystal of Redemption",
+  "item.lavas_trinkets.pickaxe_of_prosperity": "Pick of Prosperity",
+  "item.lavas_trinkets.sickle_of_tears": "Sickle of Tears",
+  "item.lavas_trinkets.grappler": "Grappler",
+
+  "tooltip.lavas_trinkets.grappler_tooltip": "[Right click] Grapple towards arrow",
+  "tooltip.lavas_trinkets.sickle_passive_tooltip": "[Critical hit] Inflict an unbreakable cry",
+  "tooltip.lavas_trinkets.sickle_active_tooltip": "[Right click] Shatter all nearby crying enemies, dealing a burst of damage",
+  "tooltip.lavas_trinkets.needle_tooltip": "[Right click] Dash forward",
+  "tooltip.lavas_trinkets.wraith_passive_tooltip": "[Critical hit] Chance to charge the weapon",
+  "tooltip.lavas_trinkets.wraith_active_tooltip": "[Right click] Speed yourself up depending on current charges.",
+  "tooltip.lavas_trinkets.harpoon_tooltip": "[Right click] Pull in thrown harpoon",
+  "tooltip.lavas_trinkets.redemption_crystal_tooltip": "[Right click] Pull in thrown harpoon",
+
+  "lavas_trinkets.advancements.obtain_harpoon.description": "Obtain a harpoon from driftwood barrels.",
+  "lavas_trinkets.advancements.obtain_harpoon.title": "Poor Man's Trident",
+  "lavas_trinkets.advancements.find_driftwood.description": "Find a pile of floating debris at sea",
+  "lavas_trinkets.advancements.find_driftwood.title": "Driftwood",
+  "lavas_trinkets.advancements.obtain_wraith.description": "Find a wraith from a fortress chest.",
+  "lavas_trinkets.advancements.obtain_wraith.title": "Soul Seeker",
+  "lavas_trinkets.advancements.obtain_needle.description": "Find hornet's needle in a mineshaft.",
+  "lavas_trinkets.advancements.obtain_needle.title": "Silky",
+  "lavas_trinkets.advancements.obtain_crystal.description": "Find a crystal of redemption from end city chests.",
+  "lavas_trinkets.advancements.obtain_crystal.title": "A Second Chance",
+
+  "effect.lavas_trinkets.unbreakable_cry": "Unbreakable Cry",
+
+  "creativetab.lavas_trinkets.gear": "Lava's Trinkets",
 
   "entity.lavas_trinkets.harpoon": "Harpoon"
 }

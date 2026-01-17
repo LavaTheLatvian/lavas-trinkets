@@ -1,6 +1,8 @@
 {
   "replace": false,
   "entries": [
-    "lavas_trinkets:chest/mineshaft_loot_modifier"
+    "lavas_trinkets:chest/mineshaft_loot_modifier",
+    "lavas_trinkets:chest/end_city_loot_modifier",
+    "lavas_trinkets:chest/fortress_loot_modifier"
   ]
 }

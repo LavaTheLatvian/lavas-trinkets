@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "id": "lavas_trinkets:wraith",
+      "count": 1
+    },
+    "title": {
+      "translate": "lavas_trinkets.advancements.obtain_wraith.title"
+    },
+    "description": {
+      "translate": "lavas_trinkets.advancements.obtain_wraith.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "minecraft:nether/find_fortress",
+  "criteria": {
+    "wraith": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "lavas_trinkets:wraith"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "wraith"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

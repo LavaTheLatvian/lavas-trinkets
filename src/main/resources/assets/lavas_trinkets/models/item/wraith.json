@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:item/handheld",
+  "loader": "neoforge:separate_transforms",
+  "base": {
+    "parent": "lavas_trinkets:item/wraith_held"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "lavas_trinkets:item/wraith_gui"
+    }
+  }
+}

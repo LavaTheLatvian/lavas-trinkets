@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "id": "lavas_trinkets:crystal_of_redemption",
+      "count": 1
+    },
+    "title": {
+      "translate": "lavas_trinkets.advancements.obtain_crystal.title"
+    },
+    "description": {
+      "translate": "lavas_trinkets.advancements.obtain_crystal.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "minecraft:end/find_end_city",
+  "criteria": {
+    "crystal": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "lavas_trinkets:crystal_of_redemption"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "crystal"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "L": {
+      "item": "minecraft:lead"
+    },
+    "C": {
+      "item": "minecraft:crossbow"
+    },
+    "T": {
+      "item": "minecraft:tripwire_hook"
+    }
+  },
+  "pattern": [
+    "ITI",
+    "LCL",
+    " I "
+  ],
+  "result": {
+    "count": 1,
+    "id": "lavas_trinkets:grappler"
+  }
+}

@@ -3,7 +3,13 @@ package net.lavathelatvian.lavas_trinkets;
 import net.lavathelatvian.lavas_trinkets.component.ModDataComponents;
 import net.lavathelatvian.lavas_trinkets.item.ModItems;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.item.ClampedItemPropertyFunction;
 import net.minecraft.client.renderer.item.ItemProperties;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.CrossbowItem;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.component.ChargedProjectiles;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -32,6 +38,21 @@ public class LavasTrinketsClient {
             ItemProperties.register(ModItems.HARPOON_ITEM.get(), LavasTrinketsMod.prefix("thrown"), (stack, level, entity, seed) -> {
                 return stack.get(ModDataComponents.HARPOON_THROWN) ? 0.0F : 1.0F;
             });
+
+            ItemProperties.register(ModItems.GRAPPLER.get(), LavasTrinketsMod.prefix("pull"), (stack, level, entity, seed) -> {
+                if (entity == null) {
+                    return 0.0F;
+                } else {
+                    return CrossbowItem.isCharged(stack) ? 0.0F : (float)(stack.getUseDuration(entity) - entity.getUseItemRemainingTicks()) / (float)CrossbowItem.getChargeDuration(stack, entity);
+                }
+            });
+            ItemProperties.register(ModItems.GRAPPLER.get(), LavasTrinketsMod.prefix("pulling"), (stack, level, entity, seed) ->
+                    entity != null && entity.isUsingItem() && entity.getUseItem() == stack && !CrossbowItem.isCharged(stack) ? 1.0F : 0.0F);
+            ItemProperties.register(ModItems.GRAPPLER.get(), LavasTrinketsMod.prefix("charged"), (stack, level, entity, seed) ->
+                    CrossbowItem.isCharged(stack) ? 1.0F : 0.0F);
+
+
+
             ItemProperties.register(ModItems.HARPOON_ITEM.get(), LavasTrinketsMod.prefix("throwing"), (stack, level, entity, seed) -> {
                 return stack.get(ModDataComponents.THROWING) ? 0.0F : 1.0F;
             });

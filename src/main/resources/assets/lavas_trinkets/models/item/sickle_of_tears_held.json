@@ -1,0 +1,19 @@
+{
+  "loader": "neoforge:item_layers",
+  "parent": "lavas_trinkets:item/large_weapon_template",
+  "render_type": "cutout",
+  "textures": {
+    "layer0": "lavas_trinkets:item/sickle",
+    "layer1": "lavas_trinkets:item/sickle_glow"
+  },
+  "neoforge_data": {
+    "layers": {
+      "1": {
+        "color": "FFFFFFFF",
+        "block_light": 15,
+        "sky_light": 15,
+        "ambient_occlusion": false
+      }
+    }
+  }
+}

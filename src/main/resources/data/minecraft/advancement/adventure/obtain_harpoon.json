@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "id": "lavas_trinkets:harpoon",
+      "count": 1
+    },
+    "title": {
+      "translate": "lavas_trinkets.advancements.obtain_harpoon.title"
+    },
+    "description": {
+      "translate": "lavas_trinkets.advancements.obtain_harpoon.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "minecraft:adventure/find_driftwood",
+  "criteria": {
+    "harpoon": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "lavas_trinkets:harpoon"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "harpoon"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

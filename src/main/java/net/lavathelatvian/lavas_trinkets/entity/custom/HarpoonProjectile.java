@@ -10,8 +10,10 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
@@ -32,6 +34,9 @@ public class HarpoonProjectile extends AbstractArrow {
         super(ModEntities.HARPOON_THROWN.get(), entity, level, new ItemStack(Items.AIR), entity.getUseItem());
     }
 
+    public void setPickupItemStackOrigin(ItemStack stack) {
+        this.setPickupItemStack(stack);
+    }
 
     public void startPulling(Entity entity) {
         if (this == entity) {
@@ -40,6 +45,11 @@ public class HarpoonProjectile extends AbstractArrow {
             this.setNoPhysics(true);
         }
     }
+
+    public ItemStack getWeaponItem() {
+        return this.getPickupItemStackOrigin();
+    }
+
     public void stopPulling(Entity entity) {
         if (this == entity) {
             this.setNoPhysics(false);
@@ -67,7 +77,6 @@ public class HarpoonProjectile extends AbstractArrow {
 
         Entity entity = result.getEntity();
         float damage = 8.0F;
-
         this.hasImpacted = true;
 
         Entity owner = this.getOwner();
@@ -75,7 +84,7 @@ public class HarpoonProjectile extends AbstractArrow {
         Level var7 = this.level();
         if (var7 instanceof ServerLevel serverlevel) {
             // apply enchant damage *UNFINISHED*
-//            damage = EnchantmentHelper.modifyDamage(serverlevel, this.getWeaponItem(), entity, damagesource, damage);
+            damage = EnchantmentHelper.modifyDamage(serverlevel, this.getWeaponItem(), entity, damagesource, damage);
 
             // +1 damage under water
             if (entity.isUnderWater()) ++damage;
@@ -101,6 +110,7 @@ public class HarpoonProjectile extends AbstractArrow {
     @Override
     protected void onHitBlock(BlockHitResult result) {
         this.hasImpacted = true;
+        this.setSoundEvent(SoundEvents.TRIDENT_HIT_GROUND);
         super.onHitBlock(result);
         if(result.getDirection() == Direction.SOUTH) {
             groundedOffset = new Vec2(215f, 180f);
