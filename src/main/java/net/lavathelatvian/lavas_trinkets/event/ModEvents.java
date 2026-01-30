@@ -10,20 +10,20 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.village.WandererTradesEvent;
 
-@EventBusSubscriber(modid = LavasTrinketsMod.MODID)
+//@EventBusSubscriber(modid = LavasTrinketsMod.MODID)
 public class ModEvents {
-
-//    @SubscribeEvent
-//    public static void onWandererTrades(WandererTradesEvent event) {
-//        event.getRareTrades().add((entity, random) ->
-//                new MerchantOffer(
-//                        new ItemCost(Items.EMERALD, 20),              // cost
-//                        new ItemStack(ModItems.PROSPERITY_PICKAXE.get(), 1),     // result
-//                        1,   // max uses
-//                        1,    // villager XP (ignored for wandering trader)
-//                        0.05F // price multiplier
-//                )
-//        );
-//    }
-
+/**
+    @SubscribeEvent
+    public static void onWandererTrades(WandererTradesEvent event) {
+        event.getRareTrades().add((entity, random) ->
+                new MerchantOffer(
+                        new ItemCost(Items.EMERALD, 20),              // cost
+                        new ItemStack(ModItems.PROSPERITY_PICKAXE.get(), 1),     // result
+                        1,   // max uses
+                        1,    // villager XP (ignored for wandering trader)
+                        0.05F // price multiplier
+                )
+        );
+    }
+*/
 }

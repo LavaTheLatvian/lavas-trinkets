@@ -53,6 +53,7 @@ public class ModItems {
                                     6,
                                     -2.6f
                             ))));
+    /**
     public static final Supplier<ProsperityPickaxeItem> PROSPERITY_PICKAXE = ITEMS.register("pickaxe_of_prosperity", () -> new ProsperityPickaxeItem(
             Tiers.DIAMOND,
             new Item.Properties()
@@ -60,7 +61,7 @@ public class ModItems {
                     .attributes(
                             ProsperityPickaxeItem.createAttributes(
                                     MYTHIC, 1, -2f
-                            ))));
+                            )))); */
     public static final Supplier<ObidianSickleItem> CRYING_SICKLE = ITEMS.register("sickle_of_tears", () -> new ObidianSickleItem(
             Tiers.NETHERITE,
             new Item.Properties()

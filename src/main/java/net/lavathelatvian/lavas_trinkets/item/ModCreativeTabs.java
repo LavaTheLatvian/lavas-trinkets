@@ -22,7 +22,7 @@ public class ModCreativeTabs {
                         output.accept(ModItems.HARPOON_ITEM.get());
                         output.accept(ModItems.WRAITH.get());
                         output.accept(ModItems.CRYING_SICKLE.get());
-                        output.accept(ModItems.PROSPERITY_PICKAXE.get());
+                        output.accept(ModItems.GRAPPLER.get());
                         output.accept(ModItems.CRYSTAL_OF_REDEMPTION.get());
                     }).build());
 
